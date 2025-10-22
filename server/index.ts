@@ -3,7 +3,7 @@ import { existsSync } from "fs";
 import app from './app';
 
 // Puerto configurable por variable de entorno o 3000 por defecto
-const port = Number(process.env.PORT) || 3000;
+const port = Number(process.env.PORT) || 10000;
 
 // Rutas a los certificados locales (solo para entorno local)
 const certPath = "./certs/localhost.crt";
@@ -21,7 +21,8 @@ const server = Bun.serve({
       keyFile: keyPath,
     }
     : {}), // Si no existen, usa HTTP automáticamente
-  fetch: app.fetch
+  fetch: app.fetch,
+  hostname: "0.0.0.0",
 } as any);
 
 console.log("------------------------------------------------");
