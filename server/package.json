@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon",
     "start": "NODE_ENV=production bun run index.ts",
-    "build": "cd ../app && bun run build",
+    "build": "cd ../app && bun install && bun run build",
     "tsc": "tsc --noEmit"
   },
   "devDependencies": {
