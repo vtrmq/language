@@ -1,0 +1,7 @@
+{
+  "watch": ["*.ts", "routes/"],
+  "ext": "ts,js",
+  "ignore": ["certs", "node_modules"],
+  "exec": "bun run index.ts",
+  "delay": 1000
+}
